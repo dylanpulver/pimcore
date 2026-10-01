@@ -47,7 +47,7 @@ class JobRun
     #[ORM\Column(nullable: true)]
     private ?int $ownerId;
 
-    #[ORM\Column(type: 'string', length: 10, enumType: JobRunStates::class)]
+    #[ORM\Column(type: 'string', length: 100, enumType: JobRunStates::class)]
     private JobRunStates $state = JobRunStates::NOT_STARTED;
 
     #[ORM\Column(type: 'integer', nullable: true)]
@@ -66,7 +66,7 @@ class JobRun
     #[ORM\Column(type: 'text')]
     private ?string $serializedJob;
 
-    #[ORM\Column(type: 'json')]
+    #[ORM\Column(type: 'json', nullable: true)]
     private ?array $context = null;
 
     #[ORM\Column(nullable: false)]
